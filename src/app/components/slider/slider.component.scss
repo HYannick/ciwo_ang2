@@ -1,0 +1,60 @@
+@import '../../../assets/variables';
+.slider-component{
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 45%;
+  .blurred {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    height: 100px;
+  }
+  .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+99&0.65+0,0+100;Neutral+Density */
+    background: -moz-linear-gradient(bottom, rgba(3, 43, 43, 1) 0%, rgba(0,0,0,0.01) 99%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(bottom, rgba(3, 43, 43, 1) 0%,rgba(0,0,0,0.01) 99%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to top, rgba(43, 43, 43, 1) 0%,rgba(0,0,0,0.01) 99%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    opacity: 1;
+    z-index: 1;
+    transition: 0.3s;
+  }
+}
+.slider-wrapper{
+  position: relative;
+  .slide{
+    position: absolute;
+    overflow: hidden;
+    padding-bottom: 45%;
+    width: 100%;
+    opacity: 1;
+
+    img{
+      position: absolute;
+    }
+    .infos{
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      z-index: 10;
+      color: #fff;
+      width: 550px;
+      transform: translateY(-50%);
+      .m-release{
+        color: $color-1;
+      }
+      .m-title{
+        font-size: 60px;
+        margin-top: 0;
+      }
+      .m-overview{}
+    }
+  }
+}

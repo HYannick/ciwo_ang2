@@ -1,0 +1,32 @@
+<!--<div class="search-bar">
+    <input class="input-search" id="search" #search type="text" (keyup.enter)="updateMovies(search.value)"/>
+    <label for="search" class="search-icon"><span class="fa fa-search"></span></label>
+</div>-->
+<slider-component></slider-component>
+<div *ngIf="results" class="results-search container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="list-item col-md-4" *ngFor="let result of results" [@appear]>
+                <movie-card [result]="result"></movie-card>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="popularMovies" class="popular-movies container-fluid">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-2">
+            <h1 class="popular-title home-title">Popular movies</h1>
+
+            <div class="home-slider">
+                <div class="slide-wrapper" [ngStyle]="{'transform': 'translateX('+moveSlide+'px'}">
+                    <div class="list-item" *ngFor="let popular of popularMovies" [@appear]>
+                        <movie-card [result]="popular"></movie-card>
+                    </div>
+                </div>
+            </div>
+            <button (click)="toLeft()">Left</button>
+            <button (click)="toRight()">Right</button>
+        </div>
+    </div>
+</div>

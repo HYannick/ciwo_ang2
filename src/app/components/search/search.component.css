@@ -1,0 +1,79 @@
+a {
+  text-decoration: none !important; }
+
+.search-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3; }
+  .search-bar .search-icon {
+    position: absolute;
+    right: 20px;
+    color: #fff;
+    font-size: 25px;
+    top: 50%;
+    transform: translateY(-50%); }
+  .search-bar:hover:after {
+    width: 100%; }
+  .search-bar:after {
+    content: '';
+    position: absolute;
+    display: table;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    transition: 0.3s; }
+
+.input-search {
+  width: 100%;
+  padding: 10px;
+  font-size: 25px;
+  color: #fff;
+  outline: none;
+  border: none;
+  background: transparent;
+  position: relative; }
+
+.home-slider {
+  overflow: hidden; }
+  .home-slider .slide-wrapper {
+    width: calc(350px*22); }
+
+.list-item {
+  list-style: none;
+  display: table;
+  margin-bottom: 30px;
+  max-width: 350px;
+  width: 100%;
+  float: left;
+  padding: 0 15px; }
+
+.home-title {
+  color: #ffffff;
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 15;
+  top: -40px;
+  left: -10px;
+  font-size: 40px; }
+  .home-title:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 10%;
+    height: 6px;
+    background: #F2E3C6;
+    transition: 0.3s; }
+
+.popular-movies {
+  position: relative; }
+  .popular-movies:hover .home-title:after {
+    width: 100%; }
+
+.slide-wrapper {
+  transition: 0.5s; }
+
+/*# sourceMappingURL=search.component.css.map */

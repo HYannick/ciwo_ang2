@@ -1,0 +1,11 @@
+<div *ngIf="result">
+    <h3 class="orange-text">{{title}}</h3>
+        <div class="results-search container-fluid">
+            <div class="row">
+                <div class="list-item col-xs-3" *ngFor="let movie of result">
+                    <movie-card [result]="movie"></movie-card>
+                </div>
+
+            </div>
+        </div>
+</div>

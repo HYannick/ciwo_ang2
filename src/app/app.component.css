@@ -1,0 +1,64 @@
+a {
+  text-decoration: none !important; }
+
+header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  padding: 15px 0; }
+  header .logo {
+    font-size: 60px;
+    color: #ffffff;
+    letter-spacing: 5px; }
+    header .logo:hover .tongue:after {
+      height: 150px; }
+    header .logo .tongue {
+      color: #353634;
+      position: relative;
+      z-index: 1;
+      padding: 0 4px; }
+      header .logo .tongue:after {
+        content: '';
+        background: #ffffff;
+        position: absolute;
+        top: -25px;
+        width: 100%;
+        height: 100px;
+        left: 0;
+        z-index: -1;
+        transition: 0.3s; }
+  header .main-nav {
+    float: right;
+    padding: 0;
+    border-bottom: 2px solid #ffffff;
+    transition: 0.3s; }
+    header .main-nav:hover {
+      border-bottom: 2px solid #F2E3C6; }
+    header .main-nav li {
+      list-style: none;
+      display: table;
+      float: left;
+      padding: 25px; }
+      header .main-nav li a {
+        color: #ffffff;
+        transition: 0.3s;
+        position: relative;
+        font-size: 20px;
+        letter-spacing: 4px; }
+        header .main-nav li a:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 0;
+          bottom: -28px;
+          left: 0;
+          background: #F2E3C6;
+          transition: 0.3s; }
+        header .main-nav li a:hover {
+          color: #F2E3C6; }
+          header .main-nav li a:hover:after {
+            height: 10px; }
+
+/*# sourceMappingURL=app.component.css.map */

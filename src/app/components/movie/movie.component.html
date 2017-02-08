@@ -1,0 +1,20 @@
+<div *ngIf="movie" class="movie-desc">
+    <div class="backdrop_img">
+        <div class="overlay"></div>
+        <img width="100%" [@fade] [src]="movie.backdrop_path" />
+    </div>
+    <div class="container">
+        <div class="view_trailer">
+            <img width="250px" [@appear] [src]="movie.poster_path"/>
+        </div>
+        <div class="col-md-8">
+            <div class="review">
+                <p *ngFor="let review of reviews">
+                    {{review.content}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <a routerLink="/">Retour </a>
+</div>

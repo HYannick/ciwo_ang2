@@ -1,0 +1,77 @@
+@import '../assets/variables';
+header{
+  position: absolute;
+  width: 100%;
+  top:0;
+  left:0;
+  z-index:9999;
+  padding: 15px 0;
+  .logo{
+    font-size: 60px;
+    color: #ffffff;
+    letter-spacing: 5px;
+    &:hover{
+      .tongue:after{
+        height: 150px;
+      }
+    }
+    .tongue{
+      color: $color-5;
+      position: relative;
+      z-index: 1;
+      padding: 0 4px;
+
+      &:after{
+        content: '';
+        background: #ffffff;
+        position: absolute;
+        top: -25px;
+        width: 100%;
+        height: 100px;
+        left:0;
+        z-index: -1;
+        transition: 0.3s;
+      }
+    }
+  }
+
+  .main-nav{
+    float: right;
+    padding: 0;
+    border-bottom: 2px solid #ffffff;
+    transition: 0.3s;
+    &:hover{
+      border-bottom: 2px solid $color-1;
+    }
+    li{
+      list-style: none;
+      display: table;
+      float: left;
+      padding: 25px;
+
+      a{
+        color: #ffffff;
+        transition: 0.3s;
+        position: relative;
+        font-size: 20px;
+        letter-spacing: 4px;
+        &:after{
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 0;
+          bottom: -28px;
+          left: 0;
+          background: $color-1;
+          transition: 0.3s;
+        }
+        &:hover{
+          color: $color-1;
+          &:after{
+            height: 10px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import '../../../assets/variables';
+.backdrop_img{
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 25%;
+  img{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-40%);
+  }
+  .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+99&0.65+0,0+100;Neutral+Density */
+    background: -moz-linear-gradient(bottom, rgba(43, 43, 43, 1) 0%, rgba(0,0,0,0.01) 99%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(bottom, rgba(43, 43, 43, 1) 0%,rgba(0,0,0,0.01) 99%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to top, rgba(43, 43, 43, 1) 0%,rgba(0,0,0,0.01) 99%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    opacity: 1;
+    z-index: 1;
+    transition: 0.3s;
+  }
+}
+
+.view_trailer{
+  transform: translateY(-40%);
+  position: relative;
+  z-index: 9;
+}
+
+.review{
+  color: #ffffff;
+}

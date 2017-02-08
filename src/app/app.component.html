@@ -1,0 +1,35 @@
+<header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-md-offset-2 col-xs-2">
+                <a routerLink="/" class="logo"><img src="https://www.themoviedb.org/assets/static_cache/27b65cb40d26f78354a4ac5abf87b2be/images/v4/logos/powered-by-rectangle-green.svg"/></a>
+            </div>
+            <ul class="main-nav">
+                <li><a routerLink="">Movies</a></li>
+                <li><a routerLink="">TV Shows</a></li>
+                <li><a routerLink="">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+</header>
+<div class="main-container">
+    <!--<div class="sidebar">
+        <div class="col-md-2">
+            <ul>
+                <li *ngFor="let genre of genres">
+                    <a routerLink="/genre/{{genre.id}}/{{genre.name}}">{{genre.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>-->
+    <div class="main-content">
+        <div class="col-md-12">
+            <div class="row">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
+
+
