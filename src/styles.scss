@@ -1,7 +1,9 @@
-@import 'assets/_variables.scss';
+@import 'assets/_Variables';
 
 body{
   background: $color-4;
+  color: #ffffff;
+  font-family: $numans, sans-serif;
 }
 .main-container{
 

@@ -1,18 +1,117 @@
 <div *ngIf="movie" class="movie-desc">
     <div class="backdrop_img">
         <div class="overlay"></div>
-        <img width="100%" [@fade] [src]="movie.backdrop_path" />
+        <img width="100%" [@fade] src="https://image.tmdb.org/t/p/w1280/{{movie.backdrop_path}}" />
     </div>
     <div class="container">
-        <div class="view_trailer">
-            <img width="250px" [@appear] [src]="movie.poster_path"/>
-        </div>
-        <div class="col-md-8">
-            <div class="review">
-                <p *ngFor="let review of reviews">
-                    {{review.content}}
-                </p>
+        <div class="row">
+            <div class="movie-infos" [@fade]>
+                <div class="col-md-12">
+                    <div class="view_trailer">
+                        <div class="col-md-3">
+                            <img class="m-poster" width="250px" [@appear] src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}"/>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="main-infos">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p class="m-release-date">{{movie.release_date}}</p>
+                                        <h2 class="m-title">{{movie.original_title}}</h2>
+                                        <p>{{movie.tagline}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li class="m-gender" *ngFor="let genre of movie.genres.slice(0,3)"><a routerLink="/genres/{{genre.id}}/{{genre.name}}">{{genre.name}}</a></li>
+                                        </ul>
+                                        <p class="m-synopsis">{{movie.overview}}</p>
+                                        <div class="m-links">
+                                            <a href="#0" class="button button--antiman button--inverted button--border-thin button--text-thick button--size-m button--round-s">View trailer</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="other-infos">
+                                            <h4>Movie Details</h4>
+                                            <ul>
+                                                <li>
+                                                    <p>Product Country</p>
+                                                    <ul class="info-list">
+                                                        <li *ngFor="let prdC of movie.production_countries">{{prdC.name}}</li>
+                                                    </ul>
+
+                                                </li>
+                                                <li>
+                                                    <p>Producted By</p>
+                                                    <ul class="info-list">
+                                                        <li *ngFor="let prdCmp of movie.production_companies.slice(0,3)">{{prdCmp.name}}</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <p>Actors</p>
+                                                    <ul class="info-list">
+                                                        <li *ngFor="let actor of cast">{{actor.name}}</li>
+                                                    </ul>
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="view_infos">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="review">
+                                <h2>Review</h2>
+                                <p *ngFor="let review of reviews">
+                                    {{review.content}}
+                                </p>
+                            </div>
+                            <img *ngFor="let image of mainPicture" class="main-image" width="100%" src="https://image.tmdb.org/t/p/w500/{{image.file_path}}"/>
+                            <!-- <iframe class="embed-responsive-item" [src]="videos.url"></iframe>-->
+                            <h2>Casting</h2>
+                            <ul class="actors">
+                                <li class="actor-img" *ngFor="let actor of cast">
+                                    <img width="150px" src="https://image.tmdb.org/t/p/w500/{{actor.profile_path}}"/>
+                                    <span class="act-name">{{actor.name}}</span>
+                                </li>
+                            </ul>
+                            <div class="similar_movies">
+                                <h2>Similar movies</h2>
+                                <div class="row">
+                                    <div class="list-item col-md-3" *ngFor="let similar of similarMovies" [@appear]>
+                                        <movie-card [result]="similar"></movie-card>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h2>Medias</h2>
+                            <div class="media">
+                                <div class="row">
+                                    <div class="col-md-6" *ngFor="let image of images">
+                                        <div class="media-bloc">
+                                            <img class="m-medias" width="100%" src="https://image.tmdb.org/t/p/w500/{{image.file_path}}"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
+
         </div>
     </div>
 

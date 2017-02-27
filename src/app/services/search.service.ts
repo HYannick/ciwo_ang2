@@ -67,4 +67,32 @@ export class SearchMovieService {
         search.set('api_key', this.apiKey);
         return this.http.get(`${this.baseUrl}/movie/${id}/reviews`, {search}).map(res => res.json())
     }
+
+    getMovieCredits(id: string){
+        var search = new URLSearchParams();
+        search.set('sort_by','popularity.desc');
+        search.set('api_key', this.apiKey);
+        return this.http.get(`${this.baseUrl}/movie/${id}/credits`, {search}).map(res => res.json())
+    }
+    getMovieImages(id: string){
+        var search = new URLSearchParams();
+        search.set('sort_by','popularity.desc');
+        search.set('api_key', this.apiKey);
+        return this.http.get(`${this.baseUrl}/movie/${id}/images`, {search}).map(res => res.json())
+    }
+
+    getSimilarMovies(id: string){
+        var search = new URLSearchParams();
+        search.set('sort_by','popularity.desc');
+        search.set('api_key', this.apiKey);
+        return this.http.get(`${this.baseUrl}/movie/${id}/similar`, {search}).map(res => res.json())
+    }
+    getMovieTrailer(id: string){
+        var search = new URLSearchParams();
+        search.set('sort_by','popularity.desc');
+        search.set('api_key', this.apiKey);
+        return this.http.get(`${this.baseUrl}/movie/${id}/videos`, {search}).map(res => res.json())
+    }
+
+
 }

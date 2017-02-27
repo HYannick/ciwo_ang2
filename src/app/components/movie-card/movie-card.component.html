@@ -1,7 +1,7 @@
 
     <a class="movie-link" routerLink="/movie/{{result.id}}">
         <div class="wrapper-poster">
-            <img width="100%" [src]="defaultImage" [lazyLoad]="result.poster_path" [errorImage]="errorImage" [offset]="offset" alt="{{result.original_title}}"/>
+            <img width="100%" src="https://image.tmdb.org/t/p/w500/{{result.poster_path}}" alt="{{result.original_title}}"/>
         </div>
         <div class="movie-desc">
             <p class="m-release-date">{{result.release_date}}</p>

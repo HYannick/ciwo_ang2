@@ -10,7 +10,7 @@ import "rxjs/add/operator/map";
         trigger('fadeZoom',[
             state('void', style({
                 'opacity' : '0',
-                'scale': '1.1'
+                'transform': 'scale(1.1)'
             })),
             transition('* => *', animate('.9s ease-in-out'))
         ]),

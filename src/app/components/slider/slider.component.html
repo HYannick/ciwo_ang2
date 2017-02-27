@@ -6,16 +6,6 @@
 
         <div class="slide" *ngFor="let result of results">
             <img width="100%" src="https://image.tmdb.org/t/p/original/{{result.backdrop_path}}" [@fadeZoom]/>
-            <!--
-          <div class="blurred" [@fade]></div>
-        <svg width="100%" height="100" style="position: absolute; top: 0; left: 0;" [@fade]>
-              <defs>
-                  <filter id="blur">
-                      <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
-                  </filter>
-              </defs>
-              <image filter="url(#blur)" attr.xlink:href="https://image.tmdb.org/t/p/original/{{result.backdrop_path}}" x="0" y="0" width="100%" height="1000px"  />
-          </svg>-->
             <div class="infos" [@fade]>
                 <p class="m-release">{{result.release_date}}</p>
                 <h1  class="m-title">{{result.title}}</h1>
@@ -25,7 +15,7 @@
                 <div class="rate pull-right">
                     {{result.popularity}}
                 </div>
-                <a class="btn btn-primary" routerLink="/movie/{{result.id}}">See review</a>
+                <a routerLink="/movie/{{result.id}}" class="button button--antiman button--inverted button--border-thin button--text-thick button--size-m button--round-s">See review</a>
             </div>
         </div>
     </div>

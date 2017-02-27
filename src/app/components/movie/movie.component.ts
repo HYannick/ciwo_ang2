@@ -2,6 +2,7 @@ import {Component, OnInit, trigger, state, style, transition, animate} from '@an
 import {SearchMovieService} from "../../services/search.service";
 import {ActivatedRoute} from '@angular/router';
 import "rxjs/add/operator/map";
+import {DomSanitizer} from "@angular/platform-browser";
 
 
 @Component({
@@ -27,23 +28,41 @@ import "rxjs/add/operator/map";
 export class MovieComponent  {
     movie: Object;
     reviews;
-    public imgSource = 'https://image.tmdb.org/t/p/w500';
-    public imgSourceOriginal = 'https://image.tmdb.org/t/p/w1280';
+    cast: Array<Object>;
+    mainPicture : Array<Object>;
+    images : Array<Object>;
+    videos : Object;
+    similarMovies : Array<Object>;
+    public sanitizer : DomSanitizer;
     constructor( private router: ActivatedRoute, private SearchMovieService: SearchMovieService){}
     ngOnInit(){
 
         this.router.params.subscribe((params) => {
             const id = params['id'];
             this.SearchMovieService.getMovie(id).subscribe(movie => {
-                console.log(movie);
-                movie.poster_path = this.imgSource + movie.poster_path;
-                movie.backdrop_path = this.imgSourceOriginal + movie.backdrop_path;
                 this.movie = movie;
             });
             this.SearchMovieService.getReview(id).subscribe(review => {
-                console.log(review.results);
                 this.reviews = review.results.slice(0,1);
-            })
+            });
+            this.SearchMovieService.getMovieCredits(id).subscribe(res => {
+                this.cast = res.cast.slice(0,4);
+            });
+            this.SearchMovieService.getMovieImages(id).subscribe(res => {
+                this.mainPicture = res.backdrops.slice(5,6);
+            });
+            this.SearchMovieService.getMovieImages(id).subscribe(res => {
+                this.images = res.backdrops.slice(0,10);
+            });
+            this.SearchMovieService.getSimilarMovies(id).subscribe(res => {
+                console.log(res.results.slice(0,10));
+                this.similarMovies = res.results.slice(0,6);
+            });
+           /*this.SearchMovieService.getMovieTrailer(id).subscribe(res => {
+                this.videos = res.results[0];
+                console.log(this.videos);
+                this.videos['url'] = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.videos['key']);
+            })*/
         })
     }
 }

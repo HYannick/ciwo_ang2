@@ -1,8 +1,9 @@
-@import '../../../assets/variables';
+@import '../../../assets/Variables';
+@import '../../../assets/Buttons';
 .backdrop_img{
   position: relative;
   overflow: hidden;
-  padding-bottom: 25%;
+  padding-bottom: 40%;
   img{
     position: absolute;
     top: 50%;
@@ -24,13 +25,140 @@
     transition: 0.3s;
   }
 }
-
-.view_trailer{
-  transform: translateY(-40%);
+.other-infos{
+  background: lighten($color-4, 5%);
+  padding: 15px;
+  border: 1px solid #fff;
+  h4{
+    margin: 0 0 10px;
+  }
+  ul{
+    padding: 0;
+    li{
+      list-style: none;
+      display: table;
+      width: 100%;
+      margin-bottom: 5px;
+      p:first-child{
+        float: left;
+        color: $color-2;
+      }
+      .info-list{
+        float: right;
+        display: table;
+        width: 50%;
+      }
+    }
+  }
+}
+.movie-infos{
+  transform: translateY(-200px);
+  z-index: 1;
   position: relative;
-  z-index: 9;
+  overflow: hidden;
 }
 
+.view_trailer{
+  //transform: translateY(-20%);
+  position: relative;
+  z-index: 9;
+  overflow: hidden;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #fff;
+}
+
+.view_infos{
+  display: table;
+  width: 100%;
+  padding-top: 40px;
+}
+.m-poster{
+  display: table;
+  float: left;
+  margin-right: 15px;
+}
+.main-infos{
+  display: table;
+  color: #ffffff;
+  .m-title{
+    font-weight: lighter;
+    font-size: 54px;
+    color: $color-2;
+  }
+  ul{
+    padding: 0;
+    li.m-gender{
+      list-style: none;
+      display: inline-block;
+      margin-right: 20px;
+      a{
+        padding: 5px 10px;
+        border: 1px solid #fff;
+        color: #ffffff;
+      }
+    }
+  }
+  .m-synopsis{
+    display: table;
+    max-width: 500px;
+    width: 100%;
+  }
+}
 .review{
   color: #ffffff;
+}
+
+.actors{
+  padding: 0;
+  li{
+    display: block;
+    float: left;
+  }
+}
+
+.media{
+  padding: 0;
+  .media-bloc{
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 55%;
+    margin-bottom: 15px;
+    img{
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+}
+
+.actor-img{
+  display: block;
+  float: left;
+  width: 150px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 25%;
+  margin-right: 15px;
+  img{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .act-name{
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    background: rgba(0,0,0,0.5);
+  }
+}
+.similar_movies{
+  display: table;
+  width: 100%;
+  .list-item{
+    margin-bottom: 30px;
+  }
 }
